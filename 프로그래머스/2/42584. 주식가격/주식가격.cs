@@ -4,34 +4,12 @@ using System.Collections.Generic;
 public class Solution {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.Length];
-        
-        Dictionary<int, int> d = new Dictionary<int, int>();
         List<int> l1 = new List<int>();
         List<int> l2 = new List<int>();
 
         for(int i = 0; i < prices.Length; i++)
         {
             Stack<int> s = new Stack<int>();
-            /*
-            foreach( var dd in d)
-            {
-                if(dd.Value <= prices[i]) 
-                {
-                    answer[dd.Key]++;
-                }
-                else 
-                {
-                    s.Push(dd.Key);
-                }
-            }
-     
-            while(s.Count != 0)
-            {
-                d.Remove(s.Pop());
-            }
-            
-            d.Add(i, prices[i]);
-            */
             
             for(int j = 0; j < l1.Count; j++)
             {
@@ -58,9 +36,9 @@ public class Solution {
             answer[i] = 1;
         }
         
-        foreach( var dd in l2)
+        foreach( var l in l2)
         {
-             answer[dd]--;
+             answer[l]--;
         }
         
         answer[answer.Length - 1] = 0;
