@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 public class Solution {
+    // 초기 두 큐의 크기는 같다.
     // 큐의 특성상 큐 1과 큐 2의 최대 pop and push 횟수는 큐의 크기 만큼이다.
     // 큐 1번의 pop 횟수는 큐 2번의 push 횟수
     // 원소의 크기는 10^9 -> long type
@@ -16,18 +17,13 @@ public class Solution {
         long sum1 = 0;
         long sum2 = 0;
         long total = 0;
-        
-        
-        foreach(var n in queue1)
+ 
+        for(int i = 0; i < queue1.Length; i++)
         {
-            sum1 += n;
-            q1.Enqueue((long)n);
-        }
-        
-        foreach(var n in queue2)
-        {
-            sum2 += n;
-            q2.Enqueue((long)n);
+            sum1 += queue1[i];
+            sum2 += queue2[i];
+            q1.Enqueue(queue1[i]);
+            q2.Enqueue(queue2[i]);
         }
         
         total = sum1 + sum2;
