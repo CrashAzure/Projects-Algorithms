@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 public class Solution {
@@ -29,6 +28,7 @@ public class Solution {
                 if(sb[index] < sb[index + 1])
                 {
                     sb.Remove(index, 1);
+                    // 맨 첫 인덱스일 경우는 피벗을 그대로
                     if(index > 0) index--;
                     break;
                 }
