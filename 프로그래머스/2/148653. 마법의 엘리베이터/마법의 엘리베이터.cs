@@ -4,8 +4,7 @@ public class Solution {
     // -1 +1 -10 +10 -100 +100.. 절댓값이 10^c 버튼
     // 지하로는 내려가지 못한다
     // 최소한의 버튼
-    // 첫째 자리수 부터 1 2 3 4 5 기댓값 1 2 3 4 5
-    // 6 부터는 6 7 8 9 10
+    // 복잡해졌는데 그냥 자리수 마다 리스트로 계산해놓고 올려주는 식으로 하는게 가독성이 좋을 것 같다.
     public int solution(int storey) {
         int answer = 0;
         string s = storey.ToString();
